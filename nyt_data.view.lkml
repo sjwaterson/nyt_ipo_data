@@ -40,7 +40,7 @@ view: nyt_data {
 
   dimension: list_r_mvmp {
     label: "Value day after IPO"
-    description: "Billions, in today's dollars"
+    description: "Millions, in today's dollars"
     type: number
     value_format_name: usd
     sql: ${TABLE}.list_rMVMP ;;
@@ -48,7 +48,7 @@ view: nyt_data {
 
   dimension: list_r_mvop {
     label: "Value at IPO"
-    description: "Billions, in today's dollars"
+    description: "Millions, in today's dollars"
     type: number
     value_format_name: usd
     sql: ${TABLE}.list_rMVOP ;;
