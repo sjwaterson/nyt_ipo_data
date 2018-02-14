@@ -14,3 +14,4 @@ datagroup: nyt_ipo_default_datagroup {
 persist_with: nyt_ipo_default_datagroup
 
 explore: nyt_data {}
+explore: nyt_data_updated {}
