@@ -1,4 +1,4 @@
-view: nyt_data {
+view: nyt_data_original {
   sql_table_name: nyt_ipo.nyt_data ;;
 
   dimension: list_bhret3 {
