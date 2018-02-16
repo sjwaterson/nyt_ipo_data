@@ -4,6 +4,7 @@ view: nyt_data_basic {
   dimension_group: list_fulldate {
     label: "IPO Date"
     type: time
+    datatype:  yyyymmdd
     timeframes: [
       date,
       day_of_month,
@@ -67,6 +68,24 @@ view: nyt_data_basic {
     type: number
     value_format: "#.00\%"
     sql: (${value_1day_later} - ${value_at_listing})/${value_at_listing}*100;;
+  }
+
+  measure: total_listing_value {
+    type: sum
+    sql: ${value_at_listing} ;;
+    value_format_name: usd
+  }
+
+  measure: total_value_1day_later {
+    type: sum
+    sql:  ${value_1day_later};;
+    value_format_name: usd
+  }
+
+  measure: total_value_3years_later {
+    type: sum
+    sql:  ${value_3years_later};;
+    value_format_name: usd
   }
 
   measure: company_count {
