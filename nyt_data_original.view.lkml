@@ -1,4 +1,5 @@
-view: nyt_data_original {
+# This VIEW is what Looker does by default with this data table.
+view: nyt_data_default {
   sql_table_name: nyt_ipo.nyt_data ;;
 
   dimension: list_bhret3 {

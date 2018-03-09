@@ -1,3 +1,6 @@
+# This is a very basic remodeling take on the NYT IPO data to clean it up a bit
+# and provide the option to use some fields as dimensions or measures
+# (vs all dimensions, which is what we do by default)
 view: nyt_data_basic {
   sql_table_name: nyt_ipo.nyt_data ;;
 
