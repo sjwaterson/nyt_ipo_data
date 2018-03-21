@@ -37,25 +37,25 @@ view: nyt_data_basic {
 
   dimension: value_at_listing {
     label: "Value at IPO listing"
-    description: "Millions, in today's dollars"
+    description: "In today's dollars"
     type: number
-    value_format_name: usd
-    sql: ${TABLE}.list_rMVOP ;;
+    value_format_name: usd_0
+    sql: ${TABLE}.list_rMVOP * 1000000;;
   }
 
   dimension: value_1day_later {
     label: "Value 1 day after IPO"
-    description: "Millions, in today's dollars"
+    description: "In today's dollars"
     type: number
-    value_format_name: usd
-    sql: ${TABLE}.list_rMVMP ;;
+    value_format_name: usd_0
+    sql: ${TABLE}.list_rMVMP * 1000000;;
   }
 
   dimension: value_3years_later {
     type: number
-    value_format_name: usd
+    value_format_name: usd_0
     label: "Value 3 years after IPO"
-    description: "Millions, in today's dollars"
+    description: "In today's dollars"
     sql: (${value_change_3years_percent}/100 * ${value_at_listing}) + ${value_at_listing} ;;
   }
 
@@ -76,20 +76,20 @@ view: nyt_data_basic {
   measure: total_listing_value {
     type: sum
     sql: ${value_at_listing} ;;
-    value_format_name: usd
-  }
+    value_format_name: usd_0
+    }
 
   measure: total_value_1day_later {
     type: sum
     sql:  ${value_1day_later};;
-    value_format_name: usd
+    value_format_name: usd_0
   }
 
   measure: total_value_3years_later {
     type: sum
     sql:  ${value_3years_later};;
-    value_format_name: usd
-  }
+    value_format_name: usd_0
+    }
 
   measure: company_count {
     type: count
