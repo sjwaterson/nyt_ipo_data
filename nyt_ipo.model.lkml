@@ -15,7 +15,7 @@ datagroup: nyt_ipo_default_datagroup {
 persist_with: nyt_ipo_default_datagroup
 
 explore: nyt_data_basic {
-  label: "Tech Company IPOs, modeled"
+  label: "Tech Company IPOs"
   description: "NYT Demo data with light modeling to add understandable names, create measures, etc."
 }
 explore: nyt_data_default_looker {
