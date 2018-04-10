@@ -5,7 +5,7 @@ view: nyt_data_basic {
   sql_table_name: nyt_ipo.nyt_data ;;
 
   dimension_group: list_fulldate {
-    label: "IPO Date"
+    label: "IPO"
     type: time
     datatype:  yyyymmdd
     timeframes: [
@@ -41,6 +41,7 @@ view: nyt_data_basic {
     type: number
     value_format_name: usd_0
     sql: ${TABLE}.list_rMVOP * 1000000;;
+    hidden: yes
   }
 
   dimension: value_1day_later {
@@ -49,6 +50,7 @@ view: nyt_data_basic {
     type: number
     value_format_name: usd_0
     sql: ${TABLE}.list_rMVMP * 1000000;;
+    hidden:  yes
   }
 
   dimension: value_3years_later {
@@ -57,6 +59,7 @@ view: nyt_data_basic {
     label: "Value 3 years after IPO"
     description: "In today's dollars"
     sql: (${value_change_3years_percent}/100 * ${value_at_listing}) + ${value_at_listing} ;;
+    hidden: yes
   }
 
   dimension: value_change_3years_percent {
@@ -64,6 +67,7 @@ view: nyt_data_basic {
     type: number
     value_format: "#.00\%"
     sql: ${TABLE}.list_BHRET3 ;;
+    hidden: yes
   }
 
   dimension: value_change_1day_percent {
@@ -71,6 +75,7 @@ view: nyt_data_basic {
     type: number
     value_format: "#.00\%"
     sql: (${value_1day_later} - ${value_at_listing})/${value_at_listing}*100;;
+    hidden: yes
   }
 
   measure: total_listing_value {
@@ -83,12 +88,14 @@ view: nyt_data_basic {
     type: sum
     sql:  ${value_1day_later};;
     value_format_name: usd_0
+    label: "Total Value 1 Day Later"
   }
 
   measure: total_value_3years_later {
     type: sum
     sql:  ${value_3years_later};;
     value_format_name: usd_0
+    label: "Total Value 3 Years Later"
     }
 
   measure: company_count {

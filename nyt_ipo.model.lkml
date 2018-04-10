@@ -1,4 +1,5 @@
 connection: "nyt_ipo"
+label: "Tech Company IPOs"
 
 # include all the views
 include: "*.view"
@@ -13,5 +14,11 @@ datagroup: nyt_ipo_default_datagroup {
 
 persist_with: nyt_ipo_default_datagroup
 
-explore: nyt_data_basic {}
-explore: nyt_data_default_looker {}
+explore: nyt_data_basic {
+  label: "Tech Company IPOs, modeled"
+  description: "NYT Demo data with light modeling to add understandable names, create measures, etc."
+}
+explore: nyt_data_default_looker {
+  label: "Tech Company IPOs, unmodeled"
+  description: "This is what the NYT Demo data looks like when it is just pulled into Looker."
+}
