@@ -22,6 +22,12 @@ view: nyt_data_basic {
     sql: ${TABLE}.list_fulldate ;;
   }
 
+  dimension: random_date_after_IPO{
+    label: "Date after IPO"
+    type: date
+    sql: ${list_fulldate_date} + 3;;
+  }
+
   dimension: company_name {
     label: "Company Name"
     type: string
