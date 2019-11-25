@@ -4,8 +4,7 @@ label: "Tech Company IPOs"
 # include all the views
 include: "*.view"
 
-# include all the dashboards
-include: "*.dashboard"
+week_start_day: wednesday
 
 datagroup: nyt_ipo_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
